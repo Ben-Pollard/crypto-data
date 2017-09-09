@@ -1,0 +1,33 @@
+Each record represents a time band
+Data points for each time band:
+    TimeBandStart
+    TimeBandEnd
+    Exchange state
+        Each exchange each pair ask/bid
+    Account state
+        USD Value
+        Open Orders
+    USD exchange rate each currency
+    News vector
+
+Goal is to maximise USD Value
+
+X:
+    1 record is a matrix with n time-bands
+    1 column for each data point
+Y:
+    USD Value
+Strategy:
+    Buy/sell each pair
+
+Network structure:
+
+Training:
+Learn the Q-function first:
+
+Learn the Q-function and the strategy together
+    Pick a real starting exchange status and invent an account status
+    These form row 1 of a training tensor
+    Exchange status for remaining rows is the real one
+    Pick a strategy
+    Change account status in next time-band according to strategy
