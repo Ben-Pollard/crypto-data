@@ -1,9 +1,9 @@
-package api_readers
+package interfaces
 
 import java.sql.Timestamp
 
-import Domain.Domain._
-import api_readers.ApiReturnTypes.{GetMarketInfo, GetRecentTransaction}
+import domain.Domain._
+import interfaces.ApiReturnTypes.{GetMarketInfo, GetRecentTransaction}
 
 object ApiReturnTypes {
   case class GetRate(pair:Pair, rate:Float)
