@@ -32,3 +32,4 @@ object Ether extends WalletWatcher("ETH") {
   def getWalletValue() = wallet
   def sendPayment(toAddress:String) = true
 }
+

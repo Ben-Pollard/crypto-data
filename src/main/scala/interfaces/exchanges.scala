@@ -5,6 +5,8 @@ import java.sql.Timestamp
 import domain.Domain._
 import interfaces.ApiReturnTypes.{GetMarketInfo, GetRecentTransaction}
 
+import scala.concurrent.Future
+
 object ApiReturnTypes {
   case class GetRate(pair:Pair, rate:Float)
   case class GetDepositLimit(pair:Pair, limit:Float)
@@ -15,6 +17,14 @@ object ApiReturnTypes {
 object Shapeshift {
   def getMarketInfo(pair: Pair): GetMarketInfo = null
   def GetRecentTransactionList(): List[GetRecentTransaction] = null
+}
+
+object usdExchangeRateService {
+  def apply(coin: Coin): Float = 0
+}
+
+object coinsAmountService {
+  def apply(): Map[Coin, Float] = null
 }
 
 object block_explorers {
