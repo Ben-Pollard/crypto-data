@@ -1,5 +1,6 @@
 package repos
 
+import domain.Domain.GlobalStatus
 import org.apache.spark.sql.Dataset
 import org.json4s.jackson.Json
 
@@ -14,10 +15,12 @@ abstract class exchange {
 }
 
 //batch process for storing result of training parser
-abstract class TrainingData {
+object TrainingData {
 
-  def read
+  def read() = null
 
-  def write(trainingDataset: Dataset[Json])
+  def write(globalStatus: GlobalStatus): Unit = {
+    val trainingRecords: Dataset[Json] = null
+  }
 
 }

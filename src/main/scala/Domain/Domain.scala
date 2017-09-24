@@ -20,11 +20,11 @@ object Domain {
   //Tensor components
   case class ExchangeStatus(exchangeRates: List[ExchangeRate]) //order of exchange rates must be immutable
   case class PortfolioStatus(usdValue: Float, coinsAmount: Map[Coin, Float]) //order of coins must be immutable
-  case class GlobalStatus(portfolioStatus: PortfolioStatus, exchangeStatus: ExchangeStatus)
   case class Strategy(trades: List[Trade]) //order of trades must be immutable
+  case class GlobalStatus(portfolioStatus: PortfolioStatus, exchangeStatus: ExchangeStatus, strategy: Strategy)
 
   val timeStepLengths: List[Int] = List(0) // time-steps can be different lengths so we can search different scales for information advantage
-  case class TrainingRecord(timeStepLength: Int, timeSeries: List[GlobalStatus])
+  case class TrainingRecord(timeStepLength: Int, timeSeries: Vector[GlobalStatus])
 
   //Wallet management
   case class Address(publicKey:String, privateKey:Option[String], everSentFrom:Boolean)

@@ -31,3 +31,10 @@ Learn the Q-function and the strategy together
     Exchange status for remaining rows is the real one
     Pick a strategy
     Change account status in next time-band according to strategy
+
+
+Timings:
+    At some point, futures from interfaces must be resolved - how long do we give them?
+    Strategy should be executed soon after information gathered - within the same tick, so info gathered at tick start
+    Neural net takes previous step strategy as input - not yet accounted for
+    Should we pass resolution delay to the model?
