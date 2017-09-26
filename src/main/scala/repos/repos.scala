@@ -1,6 +1,6 @@
 package repos
 
-import domain.Domain.GlobalStatus
+import domain.Domain.Environment
 import org.apache.spark.sql.Dataset
 import org.json4s.jackson.Json
 
@@ -19,7 +19,7 @@ object TrainingData {
 
   def read() = null
 
-  def write(globalStatus: GlobalStatus): Unit = {
+  def write(globalStatus: Environment): Unit = {
     val trainingRecords: Dataset[Json] = null
   }
 

@@ -1,5 +1,6 @@
 package data_processors
 
+import domain.Config
 import domain.Domain.{Coin, PortfolioStatus}
 import interfaces.{coinsAmountService, usdExchangeRateService}
 
@@ -8,10 +9,13 @@ import scala.concurrent.Future
 
 object PortfolioStatusBuilder {
 
-  def apply(): PortfolioStatus = {
+  //Resolve any futures coming from the API calls here
+  def apply(): (PortfolioStatus, Int) = {
+    val maxResolutionTime = Config.maxEnvironmentResolutionTime
     val coinsAmount = coinsAmountService()
     val usdValue = coinsAmount.map(c => usdExchangeRateService(c._1)).sum
-    PortfolioStatus(usdValue, coinsAmount)
+    val actualResolutionTimeMillis: Int = null
+    (PortfolioStatus(usdValue, coinsAmount), actualResolutionTimeMillis)
   }
 
 }
