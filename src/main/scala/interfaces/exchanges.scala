@@ -7,6 +7,15 @@ import interfaces.ApiReturnTypes.{GetMarketInfo, GetRecentTransaction}
 
 import scala.concurrent.Future
 
+//An exchange instance has:
+//  defined API return types
+//  mappings to output types defined in Domain
+//  getexchangestatus function
+//  getaccountstatus function
+//  getusdexchangerate function
+//  execute trade function
+//  constructor of iterable of pairs
+
 object ApiReturnTypes {
   case class GetRate(pair:Pair, rate:Float)
   case class GetDepositLimit(pair:Pair, limit:Float)
@@ -19,14 +28,3 @@ object Shapeshift {
   def GetRecentTransactionList(): List[GetRecentTransaction] = null
 }
 
-object usdExchangeRateService {
-  def apply(coin: Coin): Float = 0
-}
-
-object coinsAmountService {
-  def apply(): Map[Coin, Float] = null
-}
-
-object block_explorers {
-
-}

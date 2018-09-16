@@ -16,7 +16,7 @@ object EnvironmentProvider {
     val (portfolioStatus, portfolioResolutionTimeMillis) = PortfolioStatusBuilder()
     val environmentResolutionTime = Vector(exchangeResolutionTimeMillis, portfolioResolutionTimeMillis).max
     val environment = Environment(portfolioStatus, exchangeStatus)
-    Future(repos.TrainingData.write(environment))
+    repos.TrainingData.write(environment)
     environment
   }
 

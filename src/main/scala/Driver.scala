@@ -18,7 +18,7 @@ object Driver extends App {
   @tailrec
   def sum(stream: Stream[Environment], lastN: Option[Vector[Environment]]):Int = {
     val strategy = StrategyGeneratorAgent(lastN.get)
-    Future(StrategyExecutor(strategy))
+    StrategyExecutor(strategy)
     sum(stream.tail, Some(stream.take(Config.takeLastN).toVector))
   }
 

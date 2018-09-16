@@ -4,6 +4,7 @@ scalaVersion := "2.11.8"
 
 libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.2.0"
 libraryDependencies += "joda-time" % "joda-time" % "2.9.9"
+libraryDependencies += "com.typesafe.play" % "play_2.11" % "2.6.5"
 
 resolvers ++= Seq(
   "scala-tools" at "https://oss.sonatype.org/content/groups/scala-tools",

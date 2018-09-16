@@ -11,7 +11,7 @@ object ExchangeStatusBuilder {
   //Provide the actual resolution time as a result
   def apply(): (ExchangeStatus, Int) = {
     val maxResolutionTime = Config.maxEnvironmentResolutionTime
-    val actualResolutionTimeMillis: Int = null
+    val actualResolutionTimeMillis: Int = 0
     val exchangeStatus: ExchangeStatus = null
     (exchangeStatus, actualResolutionTimeMillis)
   }
